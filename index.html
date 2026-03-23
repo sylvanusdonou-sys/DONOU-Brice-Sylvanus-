@@ -3,159 +3,144 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sinou Optique - Cotonou</title>
+<title>Sinou Optique Benin</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 
-body{background:#f4f7fb;color:#333;}
+body{background:#f8fafc;color:#1a1a1a;}
+
+/* NAV */
+nav{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 4px 15px rgba(0,0,0,0.05);
+z-index:1000;
+}
+
+nav h2{color:#0a3d62;}
+nav a{margin:0 10px;text-decoration:none;color:#333;font-size:14px;}
+
+nav a:hover{color:#00a8ff;}
 
 /* HERO */
 .hero{
-    height:100vh;
-    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
-    url('Screenshot_20260323-224816.png');
-    background-size:cover;
-    background-position:center;
-    color:white;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.6)),
+url('Screenshot_20260323-225247.png');
+background-size:cover;
+background-position:center;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
 }
 
 .hero h1{font-size:50px;}
-.hero p{margin:20px 0;font-size:18px;}
+.hero p{margin:20px 0;}
 
 .btn{
-    background:#00a8ff;
-    padding:12px 30px;
-    border:none;
-    border-radius:30px;
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-nav {
-  display: flex;             /* Aligne les éléments en ligne */
-  flex-wrap: nowrap;         /* FORCE les onglets à rester sur une seule ligne */
-  overflow-x: auto;          /* Ajoute le défilement horizontal si ça dépasse */
-  gap: 15px;                 /* Réduit l'espace entre les onglets (au lieu de 30px) */
-  padding: 10px 15px;        /* Un peu d'espace sur les côtés */
-  width: 100%;               /* Prend toute la largeur de l'écran */
-  
-  /* Pour cacher la barre de défilement moche sur mobile */
-  scrollbar-width: none;     /* Firefox */
-  -ms-overflow-style: none;  /* IE/Edge */
-}
-
-nav::-webkit-scrollbar {
-  display: none;             /* Chrome, Safari, Opera */
-}
-
-nav a {
-    color:#333;
-    text-decoration:none;
-    font-weight:600;
-    font-size:14px;  /* Taille réduite */
-    padding:5px 10px; /* padding compact */
-}
-
-@media screen and (max-width:768px){
-    nav a{
-        font-size:13px;  /* Taille encore plus petite sur mobile */
-        padding:5px 0;
-    }
-}
-    nav a {
-    color: #333;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;  /* réduction de la taille de la police */
-    padding: 6px 7px; /* moins de padding autour */
-    }
-
+background:#00a8ff;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+color:white;
+cursor:pointer;
 }
 
 /* SECTIONS */
-section{padding:80px 20px;max-width:1100px;margin:auto;}
-h2{text-align:center;margin-bottom:40px;}
-
-/* GRID */
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
-    transition:0.3s;
-}
-.card:hover{transform:translateY(-10px);}
-
-.card img{width:100%;height:200px;object-fit:cover;}
-.card p{padding:15px;}
+section{padding:100px 20px;max-width:1200px;margin:auto;}
+h2{text-align:center;margin-bottom:40px;color:#0a3d62;}
 
 /* ABOUT */
 .about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-    align-items:center;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
 }
-.about img{width:100%;border-radius:15px;}
+
+.about img{width:100%;border-radius:20px;}
+
+/* SERVICES */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card p{padding:15px;}
 
 /* FORM */
 .form{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+background:white;
+padding:30px;
+border-radius:20px;
+box-shadow:0 10px 20px rgba(0,0,0,0.08);
 }
 
 .form input,.form select{
-    width:100%;
-    padding:12px;
-    margin:10px 0;
-    border-radius:8px;
-    border:1px solid #ccc;
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #ccc;
 }
 
 /* MAP */
 .map iframe{
-    width:100%;
-    height:300px;
-    border:0;
-    border-radius:15px;
+width:100%;
+height:300px;
+border-radius:20px;
 }
 
 /* FOOTER */
 footer{
-    background:#0a3d62;
-    color:white;
-    text-align:center;
-    padding:20px;
+background:#0a3d62;
+color:white;
+text-align:center;
+padding:30px;
 }
 
 /* WHATSAPP */
 .whatsapp{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    text-decoration:none;
-    font-size:20px;
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50%;
+color:white;
+text-decoration:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.about{grid-template-columns:1fr;}
+nav{flex-direction:column;}
 }
 </style>
 </head>
@@ -163,50 +148,56 @@ footer{
 <body>
 
 <nav>
+<h2 style="border: 2px solid #00a8ff; padding: 10px 20px; border-radius:10px; display:inline-block;">
+  SINOU OPTIQUE
+</h2>
+<div>
 <a href="#">Accueil</a>
 <a href="#about">À propos</a>
 <a href="#services">Services</a>
-<a href="#rdv">Rendez-vous</a>
+<a href="#rdv"> Prendre un rendez-vous</a>
 <a href="#contact">Contact</a>
+</div>
 </nav>
 
 <div class="hero">
-<h1>Sinou Optique</h1>
-<p>Des experts pour une vision parfaite</p>
+<h1>Vision & Élégance</h1>
+<p>Des lunettes adaptées à votre style</p>
 <button class="btn" onclick="goTo('rdv')">Prendre rendez-vous</button>
 </div>
 
 <section id="about">
 <h2>À propos</h2>
 <div class="about">
-<img src="Screenshot_20260323-225247.png">
-<div>
-<p>Sinou Optique est un centre spécialisé situé à Cotonou, offrant des services modernes pour la santé visuelle. Nous accompagnons nos clients avec professionnalisme grâce à des équipements de pointe.</p>
-</div>
+<img src="Screenshot_20260323-225221.png">
+<p>Nous accompagnons nos clients avec expertise pour améliorer leur vision grâce à des solutions modernes et élégantes.</p>
 </div>
 </section>
 
 <section id="services">
 <h2>Nos Services</h2>
 <div class="grid">
+
 <div class="card">
 <img src="Screenshot_20260323-224929.png">
-<p>Examen complet de la vue</p>
+<p>Examen professionnel de la vue</p>
 </div>
 
 <div class="card">
 <img src="Screenshot_20260323-225144.png">
-<p>Vente de lunettes modernes</p>
+<p>Large choix de lunettes en boutique</p>
 </div>
 
 <div class="card">
-<img src=om/photo-1574258495973-f010dfbb5371">
-<p>Conseils personnalisés</p>
+<img src="Screenshot_20260323-224816.png">
+<p>Essayage et conseils personnalisés</p>
 </div>
+
 </div>
 </section>
+
 <section id="rdv">
-<h2>Prendre un rendez-vous</h2>
+<h2>Rendez-vous</h2>
 <form class="form" onsubmit="sendWhatsApp(event)">
 <input type="text" placeholder="Nom" required>
 <input type="tel" placeholder="Téléphone" required>
@@ -223,44 +214,38 @@ footer{
 </section>
 
 <section id="contact">
-<h2>Contact & Localisation</h2>
-<p style="text-align:center;margin-bottom:20px;">
-📍 Wologuèdè, en face de la mairie de Cotonou, Bénin<br>
-📞 +229 66 80 06 46
-E-mail:sinouoptique@gmail.com
+<h2>Contact</h2>
+<p style="text-align:center;">
+📍 Wologuèdè, Cotonou<br>
+📞 01 98 00 09 49<br>
+📧 sinouoptique@gmail.com
 </p>
 
 <div class="map">
-<iframe src="https://maps.google.com/maps?q=cotonou%20wologuede&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+<iframe src="https://maps.google.com/maps?q=cotonou&t=&z=13&output=embed"></iframe>
 </div>
 </section>
 
 <footer>
-<p>© 2026 Sinou Optique - Tous droits réservés</p>
+<p>© 2026 Sinou Optique</p>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/22998000949" target="_blank">💬</a>
+<a class="whatsapp" href="https://wa.me/22998000949">💬</a>
 
 <script>
 function goTo(id){
-    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+document.getElementById(id).scrollIntoView({behavior:"smooth"});
 }
 
 function sendWhatsApp(e){
-    e.preventDefault();
+e.preventDefault();
+let i=document.querySelectorAll("input,select");
 
-    let inputs = document.querySelectorAll("input, select");
+let msg=`Bonjour,%0A Nom:${i[0].value}%0A Tel:${i[1].value}%0A Date:${i[2].value}%0A Heure:${i[3].value}%0A Service:${i[4].value}`;
 
-    let message = `Bonjour Sinou Optique,%0A
-Nom: ${inputs[0].value}%0A
-Téléphone: ${inputs[1].value}%0A
-Date: ${inputs[2].value}%0A
-Heure: ${inputs[3].value}%0A
-Service: ${inputs[4].value}`;
-
-    window.open(`https://wa.me/22998000949?text=${message}`, "_blank");
+window.open(`https://wa.me/22998000949?text=${msg}`);
 }
 </script>
 
 </body>
-  </html>
+</html>
