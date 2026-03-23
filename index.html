@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sinou Optique - Cotonou</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
+
+body{background:#f4f7fb;color:#333;}
+
+/* HERO */
+.hero{
+    height:100vh;
+    background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1588776814546-ec7e9b6c1b70');
+    background-size:cover;
+    background-position:center;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{font-size:50px;}
+.hero p{margin:20px 0;font-size:18px;}
+
+.btn{
+    background:#00a8ff;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* NAV */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:white;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:15px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    z-index:1000;
+}
+
+nav a{color:#333;text-decoration:none;font-weight:600;}
+
+/* SECTIONS */
+section{padding:80px 20px;max-width:1100px;margin:auto;}
+h2{text-align:center;margin-bottom:40px;}
+
+/* GRID */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+.card:hover{transform:translateY(-10px);}
+
+.card img{width:100%;height:200px;object-fit:cover;}
+.card p{padding:15px;}
+
+/* ABOUT */
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    align-items:center;
+}
+.about img{width:100%;border-radius:15px;}
+
+/* FORM */
+.form{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
+
+.form input,.form select{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+    border:1px solid #ccc;
+}
+
+/* MAP */
+.map iframe{
+    width:100%;
+    height:300px;
+    border:0;
+    border-radius:15px;
+}
+
+/* FOOTER */
+footer{
+    background:#0a3d62;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    padding:15px;
+    border-radius:50%;
+    text-decoration:none;
+    font-size:20px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+<a href="#">Accueil</a>
+<a href="#about">À propos</a>
+<a href="#services">Services</a>
+<a href="#products">Boutique</a>
+<a href="#rdv">Rendez-vous</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="hero">
+<h1>Sinou Optique</h1>
+<p>Des experts pour une vision parfaite</p>
+<button class="btn" onclick="goTo('rdv')">Prendre rendez-vous</button>
+</div>
+
+<section id="about">
+<h2>À propos</h2>
+<div class="about">
+<img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b">
+<div>
+<p>Sinou Optique est un centre spécialisé situé à Cotonou, offrant des services modernes pour la santé visuelle. Nous accompagnons nos clients avec professionnalisme grâce à des équipements de pointe.</p>
+</div>
+</div>
+</section>
+
+<section id="services">
+<h2>Nos Services</h2>
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1588776814546-ec7e9b6c1b70">
+<p>Examen complet de la vue</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517841905240-472988babdf9">
+<p>Vente de lunettes modernes</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371">
+<p>Conseils personnalisés</p>
+</div>
+</div>
+</section>
+
+<section id="products">
+<h2>Notre Boutique</h2>
+<div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642">
+<p>Montures élégantes</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad">
+<p>Lunettes solaires</p>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519">
+<p>Styles modernes</p>
+</div>
+</div>
+</section>
+
+<section id="rdv">
+<h2>Prendre un rendez-vous</h2>
+<form class="form" onsubmit="sendWhatsApp(event)">
+<input type="text" placeholder="Nom" required>
+<input type="tel" placeholder="Téléphone" required>
+<input type="date" required>
+<input type="time" required>
+
+<select>
+<option>Examen de vue</option>
+<option>Achat de lunettes</option>
+</select>
+
+<button class="btn">Envoyer via WhatsApp</button>
+</form>
+</section>
+
+<section id="contact">
+<h2>Contact & Localisation</h2>
+<p style="text-align:center;margin-bottom:20px;">
+📍 Wologuèdè, en face de la mairie de Cotonou, Bénin<br>
+📞 +229 66 80 06 46
+E-mail:sinouoptique@gmail.com
+</p>
+
+<div class="map">
+<iframe src="https://maps.google.com/maps?q=cotonou%20wologuede&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Sinou Optique - Tous droits réservés</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/22998000949" target="_blank">💬</a>
+
+<script>
+function goTo(id){
+    document.getElementById(id).scrollIntoView({behavior:"smooth"});
+}
+
+function sendWhatsApp(e){
+    e.preventDefault();
+
+    let inputs = document.querySelectorAll("input, select");
+
+    let message = `Bonjour Sinou Optique,%0A
+Nom: ${inputs[0].value}%0A
+Téléphone: ${inputs[1].value}%0A
+Date: ${inputs[2].value}%0A
+Heure: ${inputs[3].value}%0A
+Service: ${inputs[4].value}`;
+
+    window.open(`https://wa.me/22998000949?text=${message}`, "_blank");
+}
+</script>
+
+</body>
+  </html>
